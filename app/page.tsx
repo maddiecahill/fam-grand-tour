@@ -1,5 +1,75 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Map from "../components/Map";
 import { properties } from "../data/properties";
 export default function Home() {
+  const [selectedAddress, setSelectedAddress] = useState<string | null>(null);
+  const [mappedProperties, setMappedProperties] = useState(properties);
+
+  useEffect(() => {
+    const geocodeProperties = async () => {
+      const updated = await Promise.all(
+        properties.map(async (home) => {
+          try {
+            const res = await fetch(
+              `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
+                home.address
+              )}.json?access_token=${process.env.NEXT_PUBLIC_MAPBOX_TOKEN}`
+            );
+            const data = await res.json();
+            const coords = data.features?.[0]?.center;
+
+            if (!coords) return home;
+
+            return {
+              ...home,
+              lng: coords[0],
+              lat: coords[1],
+            };
+          } catch {
+            return home;
+          }
+        })
+      );
+
+      setMappedProperties(updated);
+    };
+
+    geocodeProperties();
+  }, []);
+
+  useEffect(() => {
+    const geocodeProperties = async () => {
+      const updated = await Promise.all(
+        properties.map(async (home) => {
+          try {
+            const res = await fetch(
+              `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
+                home.address
+              )}.json?access_token=${process.env.NEXT_PUBLIC_MAPBOX_TOKEN}`
+            );
+            const data = await res.json();
+            const coords = data.features?.[0]?.center;
+
+            if (!coords) return home;
+
+            return {
+              ...home,
+              lng: coords[0],
+              lat: coords[1],
+            };
+          } catch {
+            return home;
+          }
+        })
+      );
+
+      setMappedProperties(updated);
+    };
+
+    geocodeProperties();
+  }, []);
   return (
     <main className="min-h-screen bg-[#0f1720] text-white">
       <section className="border-b border-white/10 bg-[linear-gradient(180deg,#111927_0%,#0f1720_100%)] px-6 py-24 md:px-12">
@@ -101,30 +171,17 @@ export default function Home() {
             listing site.
           </p>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-[1.25fr_0.9fr]">
-            <div className="rounded-[2rem] border border-white/10 bg-[#131d29] p-4">
-              <div className="flex h-[480px] items-center justify-center rounded-[1.5rem] border border-dashed border-white/15 bg-white/5 text-center">
-                <div className="max-w-sm px-6">
-                  <p className="text-sm uppercase tracking-[0.24em] text-[#d4af37]">
-                    Mapbox Area
-                  </p>
-                  <h3 className="mt-3 text-2xl font-semibold">
-                    Interactive map goes here
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-white/65">
-                    This section will be replaced with a custom Mapbox map using
-                    branded pins, popups, and property links.
-                  </p>
-                </div>
-              </div>
-            </div>
+         <div className="mt-10 grid gap-6 lg:grid-cols-[1.25fr_0.9fr]">
+  <div className="rounded-[2rem] border border-white/10 bg-[#131d29] p-4">
+<Map properties={mappedProperties} selectedAddress={selectedAddress} />  </div>
 
-            <div className="space-y-4">
+  <div className="space-y-4">
               {properties.map((home) => (
-                <div
-                  key={home.address}
-                  className="rounded-[1.75rem] border border-white/10 bg-white p-5 text-[#111927]"
-                >
+               <div
+  key={home.address}
+  onClick={() => setSelectedAddress(home.address)}
+  className="cursor-pointer rounded-[1.75rem] border border-white/10 bg-white p-5 text-[#111927] transition hover:-translate-y-[1px] hover:shadow-lg"
+>
                   <div className="aspect-[16/9] rounded-[1.25rem] bg-[#e9ecef]" />
                   <div className="mt-5 flex items-start justify-between gap-4">
                     <div>
