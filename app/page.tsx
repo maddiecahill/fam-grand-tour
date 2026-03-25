@@ -88,53 +88,32 @@ export default function Home() {
             <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
               A more intentional way to tour the market.
             </h2>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-white/72">
-              The Grand Tour brings together a curated collection of homes hosted
-              by First And Main agents across the region. Explore featured
-              properties, plan your stops, and experience a weekend designed to
-              showcase not only exceptional homes, but the communities around
-              them.
-            </p>
+            <p className="mt-6 text-base leading-7 text-white/70">
+  The Grand Tour brings together a curated collection of homes hosted by First And Main agents across the region. Explore featured properties, plan your stops, and experience a weekend designed to showcase not only exceptional homes, but the communities around them.
+</p>
+
+<a
+  href="https://firstandmainrealestate.com"
+  target="_blank"
+  rel="noreferrer"
+  className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#c6a45e] px-6 text-sm font-semibold text-[#111927] transition hover:opacity-90"
+>
+  Explore First And Main
+</a>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              ["12+", "Homes on Tour"],
-              ["2 Days", "Weekend Stops"],
-            ].map(([value, label]) => (
-              <div
-                key={label}
-                className="rounded-3xl border border-white/10 bg-white/5 p-6"
-              >
-                <div className="text-3xl font-semibold">{value}</div>
-                <div className="mt-2 text-sm uppercase tracking-[0.18em] text-white/55">
-                  {label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+         <div className="grid gap-5">
+  {/* Info Box */}
 
-      <section className="border-y border-white/10 bg-[#0f1720] px-6 py-10 md:px-12">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
-            ENTER TO WIN
-          </p>
-          <h3 className="mt-2 text-2xl font-semibold">
-            WASHINGTON WINE EXPERIENCE PACKAGE
-          </h3>
-
-          <div className="mt-6 flex flex-wrap gap-3">
-            {["Day", "City", "Price", "Featured", "Hosted By"].map((filter) => (
-              <button
-                key={filter}
-                className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/80"
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
+  {/* Image Card */}
+  <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 aspect-[4/5]">
+  <img
+    src="/wine.png"
+    alt="Grand Tour homes"
+    className="h-full w-full object-cover"
+  />
+</div>
+</div>
         </div>
       </section>
 
@@ -147,10 +126,23 @@ export default function Home() {
             Explore the Tour
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-8 text-white/72">
-            Use the interactive map to discover homes across the weekend, then
-            select a property to view details, get directions, or visit the full
-            listing site.
-          </p>
+  Use the interactive map to discover homes across the weekend, then select a property to view details, get directions, or visit the full listing site.
+</p>
+
+<div className="mt-6 flex flex-wrap gap-3">
+  <button className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white/85">
+    Day
+  </button>
+  <button className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white/85">
+    City
+  </button>
+  <button className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white/85">
+    Price
+  </button>
+  <button className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white/85">
+    Featured
+  </button>
+</div>
 
           <div className="mt-10 space-y-6">
             <div className="rounded-[2rem] border border-white/10 bg-[#131d29] p-4">
