@@ -41,7 +41,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#0f1720] text-white">
-     <section className="relative overflow-hidden border-b border-white/10 min-h-[520px] md:min-h-[640px] flex items-center">
+     <section className="relative overflow-hidden border-b border-white/10 min-h-[300px] md:min-h-[500px]">
      <div className="absolute inset-0">
   <img
     src="/public-background.png"
