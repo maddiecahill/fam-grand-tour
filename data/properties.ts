@@ -1,34 +1,5 @@
 export const properties = [
   {
-    address: "1428 153rd Place SE, Bellevue, WA",
-    city: "Bellevue",
-    day: "Saturday",
-    time: "12:00 PM – 3:00 PM",
-    agent: "Agent Name",
-    link: "https://firstandmainrealestate.com/properties/",
-    featured: true,
-  },
-  {
-    address: "16005 NE 160th ST, Woodinville, WA",
-    city: "Woodinville",
-    day: "Saturday",
-    time: "1:00 PM – 4:00 PM",
-    agent: "Agent Name",
-    link: "https://firstandmainrealestate.com/properties/",
-    featured: true,
-  },
-  {
-    address: "11420 51st Ave SE, Everett, WA",
-    city: "Everett",
-    day: "Sunday",
-    time: "12:00 PM – 3:00 PM",
-    agent: "Agent Name",
-    link: "https://firstandmainrealestate.com/properties/",
-    featured: false,
-  },
-];
-export const properties = [
-  {
     address: "1428 153rd Place SE, Bellevue, WA, 98007",
     city: "Bellevue",
     day: "Saturday",
