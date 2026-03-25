@@ -1,3 +1,4 @@
+import { properties } from "../data/properties";
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0f1720] text-white">
@@ -119,30 +120,9 @@ export default function Home() {
             </div>
 
             <div className="space-y-4">
-              {[
-                {
-                  title: "1234 Example Lane",
-                  city: "Snohomish",
-                  day: "Saturday",
-                  time: "12:00 PM – 3:00 PM",
-                  price: "$1,895,000",
-                  details: "4 Beds · 3 Baths · 3,220 Sq Ft",
-                  featured: true,
-                  hook: "Thoughtfully updated with elevated Northwest finishes.",
-                },
-                {
-                  title: "56 Vineyard View Drive",
-                  city: "Woodinville",
-                  day: "Sunday",
-                  time: "1:00 PM – 4:00 PM",
-                  price: "$2,475,000",
-                  details: "5 Beds · 4 Baths · 4,180 Sq Ft",
-                  featured: true,
-                  hook: "Wine country living with designer interiors and room to gather.",
-                },
-              ].map((home) => (
+              {properties.map((home) => (
                 <div
-                  key={home.title}
+                  key={home.address}
                   className="rounded-[1.75rem] border border-white/10 bg-white p-5 text-[#111927]"
                 >
                   <div className="aspect-[16/9] rounded-[1.25rem] bg-[#e9ecef]" />
@@ -151,7 +131,7 @@ export default function Home() {
                       <p className="text-xs uppercase tracking-[0.22em] text-[#8a6b16]">
                         {home.day} · {home.city}
                       </p>
-                      <h3 className="mt-2 text-xl font-semibold">{home.title}</h3>
+                      <h3 className="mt-2 text-xl font-semibold">{home.address}</h3>
                     </div>
                     {home.featured && (
                       <span className="rounded-full bg-[#f6edd1] px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-[#8a6b16]">
