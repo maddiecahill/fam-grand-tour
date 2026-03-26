@@ -263,8 +263,8 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
                   <div className="aspect-[4/3] bg-[linear-gradient(135deg,#d9dde3,#b8c1cc)]" />
                   <div className="p-6">
                     <p className="text-xs uppercase tracking-[0.22em] text-[#c6a45e]">
-                      Snohomish
-                    </p>
+  {item.toUpperCase()}
+</p>
                     <h3 className="mt-3 text-2xl font-semibold">{item}</h3>
                   
                   </div>
