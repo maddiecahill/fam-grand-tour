@@ -6,6 +6,10 @@ import { properties } from "../data/properties";
 export default function Home() {
   const [selectedAddress, setSelectedAddress] = useState<string | null>(null);
   const [mappedProperties, setMappedProperties] = useState(properties);
+  const [selectedDay, setSelectedDay] = useState<string | null>(null);
+const [selectedCity, setSelectedCity] = useState<string | null>(null);
+const [selectedPrice, setSelectedPrice] = useState<string | null>(null);
+const [featuredOnly, setFeaturedOnly] = useState(false);
 
  useEffect(() => {
   const geocodeProperties = async () => {
@@ -68,14 +72,31 @@ export default function Home() {
             experiences across Snohomish, Woodinville, and the Greater Seattle Area.
           </p>
 
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <button className="rounded-full bg-[#c6a45e] px-6 py-3 text-sm font-medium text-[#111927]">
-              Explore the Tour
-            </button>
-            <button className="rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white">
-              View Featured Homes
-            </button>
-          </div>
+<div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+  <button
+    onClick={() => {
+      document.getElementById("interactive-map")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }}
+    className="rounded-full bg-[#c6a45e] px-6 py-3 text-sm font-medium text-[#111927] transition duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(198,164,94,0.22)]"
+  >
+    Explore the Tour
+  </button>
+
+  <button
+    onClick={() => {
+      document.getElementById("featured-homes")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }}
+    className="rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-medium text-white transition duration-300 hover:bg-white/10 hover:scale-[1.02]"
+  >
+    View Communities
+  </button>
+</div>
         </div>
       </section>
 
@@ -83,14 +104,14 @@ export default function Home() {
   <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
-              Event Overview
+              Enter to Win
             </p>
             <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
-              A more intentional way to tour the market.
+              A Washington Wine Experience
             </h2>
             <p className="mt-6 text-base leading-7 text-white/70">
-  The Grand Tour brings together a curated collection of homes hosted by First And Main agents across the region. Explore featured properties, plan your stops, and experience a weekend designed to showcase not only exceptional homes, but the communities around them.
-</p>
+  Visit  Three homes on The FAM Grand Tour and check in to be entered to win a Washington Wine Experienve with $200 to local wine shops. 
+  </p>
 
 <a
   href="https://firstandmainrealestate.com"
@@ -98,7 +119,7 @@ export default function Home() {
   rel="noreferrer"
   className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#c6a45e] px-6 text-sm font-semibold text-[#111927] transition hover:opacity-90"
 >
-  Explore First And Main
+  Check in at a Stop
 </a>
           </div>
 
@@ -106,43 +127,25 @@ export default function Home() {
   {/* Info Box */}
 
   {/* Image Card */}
-  <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 aspect-[4/5]">
-  <img
-    src="/wine.png"
-    alt="Grand Tour homes"
-    className="h-full w-full object-cover"
-  />
-</div>
+  
 </div>
         </div>
       </section>
+      <section id="interactive-map" className="bg-[#111927] px-6 py-16 md:px-12">
 
-            <section className="bg-[#0f1720] px-6 py-16 md:px-12">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
-            Interactive Map
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Explore the Tour
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-white/72">
-  Use the interactive map to discover homes across the weekend, then select a property to view details, get directions, or visit the full listing site.
-</p>
+           <section className="bg-[#0f1720] px-6 py-16 md:px-12">
+  <div className="mx-auto max-w-6xl">
+    <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
+      Interactive Map
+    </p>
 
-<div className="mt-6 flex flex-wrap gap-3">
-  <button className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white/85">
-    Day
-  </button>
-  <button className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white/85">
-    City
-  </button>
-  <button className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white/85">
-    Price
-  </button>
-  <button className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm text-white/85">
-    Featured
-  </button>
-</div>
+    <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+      Explore the Tour
+    </h2>
+
+    <p className="mt-4 max-w-2xl text-base leading-8 text-white/72">
+      Use the interactive map to discover homes across the weekend, then select a property to view details, get directions, or visit the full listing site.
+    </p>
 
           <div className="mt-10 space-y-6">
             <div className="rounded-[2rem] border border-white/10 bg-[#131d29] p-4">
@@ -238,22 +241,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </section>
+      <section id="featured-homes" className="bg-[#111927] px-6 py-16 md:px-12">
 
 <section className="border-y border-white/10 bg-[#111927] px-6 py-16 md:px-12">
         <div className="mx-auto max-w-6xl">
           <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
-            Signature Properties
+            Spotlight Communities
           </p>
           <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Grand Tour Highlights
+            Discover the Lifestyle
           </h2>
-          <p className="mt-4 max-w-2xl text-base leading-8 text-white/72">
-            A curated collection of standout homes featured throughout the
-            weekend.
-          </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {["Featured Home One", "Featured Home Two", "Featured Home Three"].map(
+            {["Snohomish", "Woodinville", "Edmonds"].map(
               (item) => (
                 <div
                   key={item}
@@ -265,9 +266,7 @@ export default function Home() {
                       Snohomish
                     </p>
                     <h3 className="mt-3 text-2xl font-semibold">{item}</h3>
-                    <p className="mt-3 text-white/72">
-                      A refined property selected as part of this weekend’s Grand Tour.
-                    </p>
+                  
                   </div>
                 </div>
               )
@@ -275,21 +274,20 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </section>
 
       <section className="bg-[#0f1720] px-6 py-16 md:px-12">
         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
           <div className="min-h-[320px] rounded-[2rem] bg-[linear-gradient(135deg,#d5d9e0,#aab4c0)]" />
           <div className="flex flex-col justify-center">
             <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
-              First And Main Hub
+              EXCEPTIONAL HOMES. EXCEPTIONAL REPRESNTATION.
             </p>
             <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-              Make First And Main Your Home Base
+              FIRST AND MAIN
             </h2>
             <p className="mt-5 max-w-xl text-base leading-8 text-white/72">
-              Stop by the office during Grand Tour weekend for event details,
-              featured home recommendations, and a curated starting point before
-              you head out.
+              The Pacific Northwest's Premier Real Estate Firm.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -297,7 +295,7 @@ export default function Home() {
                 Get Office Directions
               </button>
               <button className="rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-medium text-white">
-                Contact Our Team
+                Meet The Team
               </button>
             </div>
           </div>
