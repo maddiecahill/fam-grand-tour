@@ -100,7 +100,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
         </div>
       </section>
 
-      <section className="bg-[#111927] px-6 pt-12 pb-6 md:px-12">
+      <section className="bg-[#0f1720] px-6 py-8 md:px-12">
   <div className="mx-auto w-full max-w-6xl">
     
     <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
@@ -141,7 +141,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
 
 <section
   id="interactive-map"
-  className="bg-[#111927] px-6 py-16 md:px-12"
+  className="bg-[#111927] px-6 py-10 md:px-12"
 >
   <div className="mx-auto w-full max-w-6xl">
     
@@ -151,7 +151,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
 </section>
       <section id="interactive-map" className="bg-[#111927] px-6 py-16 md:px-12">
 
-           <section className="bg-[#0f1720] px-6 py-16 md:px-12">
+           <section className="bg-[#0f1720] px-6 py- md:px-12">
   <div className="mx-auto max-w-6xl">
     <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
       Interactive Map
