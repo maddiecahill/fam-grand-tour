@@ -151,7 +151,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
 </section>
       <section id="interactive-map" className="bg-[#111927] px-6 py-16 md:px-12">
 
-           <section className="bg-[#0f1720] px-6 py- md:px-12">
+           <section className="bg-[#0f1720] px-6 py-6 md:px-12">
   <div className="mx-auto max-w-6xl">
     <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
       Interactive Map
