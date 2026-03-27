@@ -148,19 +148,21 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
     </p>
 
           <div className="mt-10 space-y-6">
-            <div className="rounded-[2rem] border border-white/10 bg-[#131d29] p-4">
-              <Map
-  properties={mappedProperties}
-  selectedAddress={selectedAddress}
-/>
-            </div>
+           <div className="-mx-4 rounded-[2rem] border border-white/10 bg-[#131d29] p-2 md:mx-0 md:p-4">
+  <div className="h-[320px] overflow-hidden rounded-[1.5rem] md:h-[500px]">
+    <Map
+      properties={mappedProperties}
+      selectedAddress={selectedAddress}
+    />
+  </div>
+</div>
 
             <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scroll-smooth">
               {mappedProperties.map((home) => (
                 <div
   key={home.address}
   onClick={() => setSelectedAddress(home.address)}
-  className={`min-w-[320px] max-w-[360px] flex-shrink-0 snap-start rounded-[1.75rem] border bg-white p-5 text-[#111927] cursor-pointer transform-gpu transition-all duration-300 flex flex-col ${
+  className={`w-[78vw] max-w-[320px] shrink-0 snap-start rounded-[1.75rem] border bg-white p-5 text-[#111927] cursor-pointer transform-gpu transition-all duration-300 flex flex-col ${
     selectedAddress === home.address
       ? "border-[#c6a45e] ring-2 ring-[#c6a45e]/30 shadow-[0_18px_40px_rgba(0,0,0,0.18)] -translate-y-2"
       : "border-[#e6e8eb] hover:-translate-y-1 hover:border-[#c6a45e]/45 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)]"
