@@ -100,7 +100,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
         </div>
       </section>
 
-      <section className="bg-[#111927] px-6 py-16 md:px-12">
+      <section className="bg-[#111927] px- pt-12 pb-6 md:px-12">
   <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
@@ -109,7 +109,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
             <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
               A Washington Wine Experience
             </h2>
-            <p className="mt-6 text-base leading-7 text-white/70">
+            <p className="mt-4 text-base leading-7 text-white/70">
   Visit  Three homes on The FAM Grand Tour and check in to be entered to win a Washington Wine Experienve with $200 to local wine shops. 
   </p>
 
@@ -117,7 +117,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
   href="https://firstandmainrealestate.com"
   target="_blank"
   rel="noreferrer"
-  className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#c6a45e] px-6 text-sm font-semibold text-[#111927] transition hover:opacity-90"
+  className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-[#c6a45e] px-6 text-sm font-semibold text-[#111927] transition hover:opacity-90"
 >
   Check in at a Stop
 </a>
@@ -245,65 +245,108 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
         </div>
       </section>
       </section>
-      <section id="featured-homes" className="bg-[#111927] px-6 py-16 md:px-12">
+   <section id="featured-homes" className="bg-[#111927] px-6 py-16 md:px-12">
+  <section className="border-y border-white/10 bg-[#111927] px-6 py-16 md:px-12">
+    <div className="mx-auto max-w-6xl">
+      <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
+        Spotlight Communities
+      </p>
+      <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+        Discover the Lifestyle
+      </h2>
 
-<section className="border-y border-white/10 bg-[#111927] px-6 py-16 md:px-12">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
-            Spotlight Communities
-          </p>
-          <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-            Discover the Lifestyle
-          </h2>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {["Snohomish", "Woodinville", "Edmonds"].map(
-              (item) => (
-                <div
-                  key={item}
-                  className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#182332]"
-                >
-                  <div className="aspect-[4/3] bg-[linear-gradient(135deg,#d9dde3,#b8c1cc)]" />
-                  <div className="p-6">
-                    <p className="text-xs uppercase tracking-[0.22em] text-[#c6a45e]">
-  {item.toUpperCase()}
-</p>
-                    <h3 className="mt-3 text-2xl font-semibold">{item}</h3>
-                  
-                  </div>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </section>
-      </section>
-
-      <section className="bg-[#0f1720] px-6 py-16 md:px-12">
-        <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
-          <div className="min-h-[320px] rounded-[2rem] bg-[linear-gradient(135deg,#d5d9e0,#aab4c0)]" />
-          <div className="flex flex-col justify-center">
-            <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
-              EXCEPTIONAL HOMES. EXCEPTIONAL REPRESNTATION.
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
-              FIRST AND MAIN
-            </h2>
-            <p className="mt-5 max-w-xl text-base leading-8 text-white/72">
-              The Pacific Northwest's Premier Real Estate Firm.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <button className="rounded-full bg-[#c6a45e] px-5 py-3 text-sm font-medium text-[#111927]">
-                Get Office Directions
-              </button>
-              <button className="rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-medium text-white">
-                Meet The Team
-              </button>
+      <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {[
+          {
+            name: "Snohomish",
+            image: "/snohomish.jpg",
+            link: "https://firstandmainrealestate.com/neighborhoods/snohomish",
+          },
+          {
+            name: "Woodinville",
+            image: "/woodinville.jpg",
+            link: "https://firstandmainrealestate.com/neighborhoods/woodinville",
+          },
+          {
+            name: "Edmonds",
+            image: "/edmonds.jpg",
+            link: "https://firstandmainrealestate.com/neighborhoods/edmonds",
+          },
+        ].map((item) => (
+          <a
+            key={item.name}
+            href={item.link}
+            target="_blank"
+            rel="noreferrer"
+            className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#182332] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(0,0,0,0.18)]"
+          >
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111927]/70 via-transparent to-transparent" />
             </div>
-          </div>
-        </div>
-      </section>
-    </main>
-  );
+
+            <div className="p-6">
+              <p className="text-xs uppercase tracking-[0.22em] text-[#c6a45e]">
+                {item.name.toUpperCase()}
+              </p>
+              <h3 className="mt-3 text-2xl font-semibold text-white">
+                {item.name}
+              </h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</section>
+
+<section className="bg-[#0f1720] px-6 py-16 md:px-12">
+  <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-2">
+    <div className="min-h-[320px] overflow-hidden rounded-[2rem]">
+      <img
+        src="/hardhats.jpg"
+        alt="First and Main"
+        className="h-full w-full object-cover"
+      />
+    </div>
+
+    <div className="flex flex-col justify-center">
+      <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
+        EXCEPTIONAL HOMES. EXCEPTIONAL REPRESENTATION.
+      </p>
+      <h2 className="mt-3 text-3xl font-semibold md:text-4xl">
+        FIRST AND MAIN
+      </h2>
+      <p className="mt-5 max-w-xl text-base leading-8 text-white/72">
+        The Pacific Northwest&apos;s Premier Real Estate Firm.
+      </p>
+
+      <div className="mt-8 flex flex-wrap gap-3">
+        <a
+          href="https://www.google.com/maps/dir/?api=1&destination=127+Avenue+A+Snohomish+WA+98290"
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-full bg-[#c6a45e] px-5 py-3 text-sm font-medium text-[#111927] transition-all duration-300 hover:opacity-90"
+        >
+          Get Office Directions
+        </a>
+
+        <a
+          href="https://firstandmainrealestate.com/team"
+          target="_blank"
+          rel="noreferrer"
+          className="rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-white/10"
+        >
+          Meet The Team
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+  </main>
+);
 }
