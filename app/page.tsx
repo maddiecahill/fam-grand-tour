@@ -100,37 +100,55 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
         </div>
       </section>
 
-      <section className="bg-[#111927] px- pt-12 pb-6 md:px-12">
-  <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.2fr_1fr]">
-          <div>
-            <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
-              Enter to Win
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
-              A Washington Wine Experience
-            </h2>
-            <p className="mt-4 text-base leading-7 text-white/70">
-  Visit three or more stops to be entered to win a $100 gift card for a Washington Wine experience, and discover what makes these communities so special.
-  </p>
+      <section className="bg-[#111927] px-6 pt-12 pb-6 md:px-12">
+  <div className="mx-auto w-full max-w-6xl">
+    
+    <div className="grid gap-10 md:grid-cols-[1.2fr_1fr]">
+      
+      <div>
+        <p className="text-sm uppercase tracking-[0.24em] text-[#c6a45e]">
+          Enter to Win
+        </p>
 
-<a
-  href="https://firstandmainrealestate.com"
-  target="_blank"
-  rel="noreferrer"
-  className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-[#c6a45e] px-6 text-sm font-semibold text-[#111927] transition hover:opacity-90"
+        <h2 className="mt-4 text-3xl font-semibold md:text-4xl text-white">
+          A Washington Wine Experience
+        </h2>
+
+        <p className="mt-4 max-w-lg text-base leading-7 text-white/70">
+          Visit three or more stops to be entered to win a $100 gift card for a
+          Washington Wine experience, and discover what makes these communities
+          so special.
+        </p>
+
+        <a
+          href="https://firstandmainrealestate.com"
+          target="_blank"
+          rel="noreferrer"
+          className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-[#c6a45e] px-6 text-sm font-semibold text-[#111927] transition hover:opacity-90"
+        >
+          Check in at a Stop
+        </a>
+      </div>
+
+      <div className="grid gap-5">
+        {/* Info Box / Image Card */}
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section
+  id="interactive-map"
+  className="bg-[#111927] px-6 py-16 md:px-12"
 >
-  Check in at a Stop
-</a>
-          </div>
+  <div className="mx-auto w-full max-w-6xl">
+    
+    {/* Your map section content */}
 
-         <div className="grid gap-5">
-  {/* Info Box */}
-
-  {/* Image Card */}
-  
-</div>
-        </div>
-      </section>
+  </div>
+</section>
       <section id="interactive-map" className="bg-[#111927] px-6 py-16 md:px-12">
 
            <section className="bg-[#0f1720] px-6 py-16 md:px-12">
