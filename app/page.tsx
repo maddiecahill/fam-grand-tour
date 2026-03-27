@@ -178,6 +178,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
   )}
 </div>
 
+
                   <div className="mt-5 flex items-start justify-between gap-4">
   <div className="min-h-[120px] flex-1">
     {/* City */}
