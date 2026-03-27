@@ -162,10 +162,10 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
                 <div
   key={home.address}
   onClick={() => setSelectedAddress(home.address)}
-  className={`w-[78vw] max-w-[320px] shrink-0 snap-start rounded-[1.75rem] border bg-white p-5 text-[#111927] cursor-pointer transform-gpu transition-all duration-300 flex flex-col ${
+  className={`w-[78vw] max-w-[320px] shrink-0 snap-start rounded-[1.75rem] border bg-white p-4 text-[#111927] cursor-pointer transition-all duration-300 ${
     selectedAddress === home.address
-      ? "border-[#c6a45e] ring-2 ring-[#c6a45e]/30 shadow-[0_18px_40px_rgba(0,0,0,0.18)] -translate-y-2"
-      : "border-[#e6e8eb] hover:-translate-y-1 hover:border-[#c6a45e]/45 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)]"
+      ? "border-[#c6a45e] ring-2 ring-[#c6a45e]/30 shadow-[0_18px_40px_rgba(0,0,0,0.18)]"
+      : "border-[#e6e8eb] hover:border-[#c6a45e]/45 hover:shadow-[0_12px_28px_rgba(0,0,0,0.12)]"
   }`}
 >
                   <div className="aspect-[16/9] overflow-hidden rounded-[1.25rem] bg-[#e9ecef]">
