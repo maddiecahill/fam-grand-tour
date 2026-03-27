@@ -110,7 +110,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
               A Washington Wine Experience
             </h2>
             <p className="mt-4 text-base leading-7 text-white/70">
-  Visit  Three homes on The FAM Grand Tour and check in to be entered to win a Washington Wine Experienve with $200 to local wine shops. 
+  Visit three or more stops to be entered to win a $100 gift card for a Washington Wine experience, and discover what makes these communities so special.
   </p>
 
 <a
@@ -149,7 +149,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
 
           <div className="mt-10 space-y-6">
            <div className="-mx-4 rounded-[2rem] border border-white/10 bg-[#131d29] p-2 md:mx-0 md:p-4">
-  <div className="h-[320px] overflow-hidden rounded-[1.5rem] md:h-[500px]">
+  <div className="h-[420px] overflow-hidden rounded-[1.5rem] md:h-[650px]">
     <Map
       properties={mappedProperties}
       selectedAddress={selectedAddress}
@@ -268,9 +268,9 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
             link: "https://firstandmainrealestate.com/neighborhoods/woodinville",
           },
           {
-            name: "Edmonds",
-            image: "/edmonds.jpg",
-            link: "https://firstandmainrealestate.com/neighborhoods/edmonds",
+            name: "Lake Stevens",
+            image: "/lakestevens.jpg",
+            link: "https://firstandmainrealestate.com/neighborhoods/lakestevens",
           },
         ].map((item) => (
           <a
