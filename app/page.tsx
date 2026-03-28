@@ -121,7 +121,7 @@ const [featuredOnly, setFeaturedOnly] = useState(false);
         </p>
 
         <a
-          href="https://firstandmainrealestate.com/giveaway"
+          href="https://firstandmainrealestate.com/win"
           target="_blank"
           rel="noreferrer"
           className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-[#c6a45e] px-6 text-sm font-semibold text-[#111927] transition hover:opacity-90"
